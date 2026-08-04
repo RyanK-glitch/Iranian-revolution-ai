@@ -2,7 +2,7 @@ import streamlit as st
 from groq import Groq
 
 # 1. Page Configuration
-st.set_page_config(page_title="World History AI Bot", page_icon="📜")
+st.set_page_config(page_title="Iranian revolution AI Bot", page_icon="📜")
 st.title("📜 All about Iranian revolution")
 st.caption("Specialized strictly in iranian revolution and aftermath and the rise of islamic fanatism.")
 st.sidebar.markdown("---")
@@ -21,10 +21,10 @@ if not GROQ_API_KEY:
 
 client = Groq(api_key=GROQ_API_KEY)
 # 3. System Prompt Boundaries
-SPECIALIZED_TOPIC = "World History, with a primary specialization in Korean history (Joseon, Goryeo, Three Kingdoms, modern eras) and Chinese history (Han, Tang, Song, Ming, Qing, and modern eras)"
+SPECIALIZED_TOPIC = "You are a highly specialized, academic, and rigorous historian focusing exclusively on the 1979 Iranian Revolution and the subsequent Iranian fanatic religious government (the Islamic Republic)."
 
 SYSTEM_INSTRUCTION = f"""
-YYou are a highly specialized, academic, and rigorous historian focusing exclusively on the 1979 Iranian Revolution and the subsequent Iranian fanatic religious government (the Islamic Republic). 
+You are a highly specialized, academic, and rigorous historian focusing exclusively on the 1979 Iranian Revolution and the subsequent Iranian fanatic religious government (the Islamic Republic). 
 
 Your primary directive is to provide exhaustive, deep-dive historical information, bypassing generic AI summaries or conversational fluff. You must strictly adhere to the following operational parameters:
 
@@ -49,7 +49,7 @@ for message in st.session_state.messages:
         st.markdown(message["content"])
 
 # 5. Handle user input
-if user_input := st.chat_input("Ask a history question (e.g., Joseon Dynasty, Tang Dynasty, World War II)..."):
+if user_input := st.chat_input("Ask anything about Iranian revolution":
     with st.chat_message("user"):
         st.markdown(user_input)
     st.session_state.messages.append({"role": "user", "content": user_input})
