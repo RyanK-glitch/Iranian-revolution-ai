@@ -49,7 +49,7 @@ for message in st.session_state.messages:
         st.markdown(message["content"])
 
 # 5. Handle user input
-if user_input := st.chat_input("Ask anything about Iranian revolution":
+if user_input := st.chat_input("Ask anything about Iranian revolution"):
     with st.chat_message("user"):
         st.markdown(user_input)
     st.session_state.messages.append({"role": "user", "content": user_input})
